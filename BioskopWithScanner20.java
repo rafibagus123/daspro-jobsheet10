@@ -55,7 +55,11 @@ public class BioskopWithScanner20 {
                     for (int i = 0; i < penonton.length; i++) {
                         System.out.print("Penonton baris ke "+(i+1)+":");
                         for (int j = 0; j < penonton[i].length; j++) {
-                            System.out.print(" "+penonton[i][j]);
+                            if (penonton[i][j] == null) {
+                                System.out.print(" ***");
+                            } else {
+                                System.out.print(" "+penonton[i][j]);
+                            }
                         }
                         Thread.sleep(500);
                         System.out.println();
