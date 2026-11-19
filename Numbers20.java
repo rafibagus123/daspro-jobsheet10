@@ -14,5 +14,14 @@ public class Numbers20 {
         for (int i = 0; i < myNumbers.length; i++) {
             System.out.println("Panjang baris ke " + (i + 1) + ": " + myNumbers[i].length);
         }
+        myNumbers[0] = new int[7];
+
+        for (int i = 0; i < myNumbers.length; i++) {
+            System.out.println(Arrays.deepToString(myNumbers));
+        }
+
+        for (int i = 0; i < myNumbers.length; i++) {
+            System.out.println("Panjang baris ke " + (i + 1) + ": " + myNumbers[i].length);
+        }
     }
 }
