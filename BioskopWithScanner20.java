@@ -9,11 +9,11 @@ public class BioskopWithScanner20 {
 
         while (true) {
 
-            System.out.println("====== MENU ======");
+            System.out.println("\n====== MENU ======");
             System.out.println("1\tInput data penonton");
             System.out.println("2\tTampilkan daftar penonton");
             System.out.println("3\tExit");
-            System.out.print("Pilih: ");
+            System.out.print("\nPilih: ");
             int menu = sc.nextInt();
             sc.nextLine();
             Thread.sleep(500);
@@ -23,13 +23,23 @@ public class BioskopWithScanner20 {
                     while (true) {
                         System.out.print("\nMasukkan nama: ");
                         nama = sc.nextLine();
-                        System.out.print("Masukkan baris: ");
-                        baris = sc.nextInt();
-                        System.out.print("Masukkan kolom: ");
-                        kolom = sc.nextInt();
-                        sc.nextLine();
+                        do {
+                            System.out.print("Masukkan baris: ");
+                            baris = sc.nextInt();
+                            System.out.print("Masukkan kolom: ");
+                            kolom = sc.nextInt();
+                            sc.nextLine();
+                            Thread.sleep(500);
+                            if (penonton[baris - 1][kolom - 1] != null) {
+                                System.out.println("Kursi sudah terisi, silahkan pilih lagi");
+                            }else if (baris < 1 || baris > 4) {
+                                System.out.println("Baris tidak valid, silahkan pilih lagi");
+                            } else if (kolom < 1 || kolom > 2) {
+                                System.out.println("Kolom tidak valid, silahkan pilih lagi");
+                            }
+                        } while (penonton[baris - 1][kolom - 1] != null || baris < 1 || baris > 4 || kolom < 1 || kolom > 2);
                         Thread.sleep(500);
-                        System.out.println("\nKursi sudah dipesan");
+                        System.out.println("Kursi sudah dipesan");
 
                         penonton[baris - 1][kolom - 1] = nama;
 
